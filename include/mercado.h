@@ -4,27 +4,27 @@
 #include <string>
 #include <vector>
 #include <unordered_map>
-
+using namespace std;
 struct Oferta {
-    std::string usuario;
-    std::string tipo;     // "compra" o "venta"
-    std::string accion;
+    string usuario;
+    string tipo;     // "compra" o "venta"
+    string accion;
     int cantidad;
     double precio;
 };
 
 struct Cliente {
-    std::string nombre;
+    string nombre;
     double saldo = 100.0;
-    std::unordered_map<std::string, int> acciones;
-    std::vector<std::string> historial;
+    unordered_map<string, int> acciones;
+    vector<string> historial;
 
     Cliente() = default;
-    Cliente(const std::string& nombreUsuario) : nombre(nombreUsuario), saldo(100.0) {}
+    Cliente(const string& nombreUsuario) : nombre(nombreUsuario), saldo(100.0) {}
 };
 
-std::string crearMensajeOferta(const Oferta& oferta);
-std::vector<Oferta> procesarMensaje(const std::string& mensaje, Cliente& cliente, std::vector<Oferta>& mercado, std::string& respuesta);
-std::string mostrarHistorial(const Cliente& cliente);
+string crearMensajeOferta(const Oferta& oferta);
+vector<Oferta> procesarMensaje(const string& mensaje, Cliente& cliente, vector<Oferta>& mercado, string& respuesta);
+string mostrarHistorial(const Cliente& cliente);
 
 #endif
